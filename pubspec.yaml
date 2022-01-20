@@ -35,6 +35,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # A biblioteca abaixo utiliza de palavras em inglês para chamar métodos
+  # e palavras-chave com mais facilidade
+  english_words: ^4.0.0 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
