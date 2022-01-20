@@ -1,6 +1,12 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
+/*
+Assim que possível, continuar a parte 2 na CodeLabs do Google
+https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2#0
+Valeu mlq
+*/
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,16 +17,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: RandomWords(),
-        ),
-      ),
+    return const MaterialApp(
+      title: 'Gerador de Startup',
+      home: RandomWords(),
     );
   }
 }
@@ -42,6 +41,16 @@ class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Lista de nomes para Startup\'' + ('s')),
+      ),
+      body: _buildSuggestions(),
+    );
+  }
+
   Widget _buildSuggestions() {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
@@ -62,16 +71,6 @@ class _RandomWordsState extends State<RandomWords> {
         pair.asPascalCase,
         style: _biggerFont,
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Lista de nomes para Startup\'' + ('s')),
-      ),
-      body: _buildSuggestions(),
     );
   }
 }
